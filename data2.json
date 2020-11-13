@@ -1,0 +1,272 @@
+[
+  {
+    "from": {
+      "identity": 619,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1655,
+        "word": "햄버거"
+      }
+    },
+    "relation": {
+      "identity": 27868,
+      "start": 593,
+      "end": 619,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 408
+      }
+    },
+    "to": {
+      "identity": 593,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 774,
+        "word": "소스"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 619,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1655,
+        "word": "햄버거"
+      }
+    },
+    "relation": {
+      "identity": 27172,
+      "start": 579,
+      "end": 619,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 377
+      }
+    },
+    "to": {
+      "identity": 579,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 615,
+        "word": "패티"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 619,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1655,
+        "word": "햄버거"
+      }
+    },
+    "relation": {
+      "identity": 36518,
+      "start": 795,
+      "end": 619,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 375
+      }
+    },
+    "to": {
+      "identity": 795,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1029,
+        "word": "매장"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 619,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1655,
+        "word": "햄버거"
+      }
+    },
+    "relation": {
+      "identity": 38590,
+      "start": 619,
+      "end": 675,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 368
+      }
+    },
+    "to": {
+      "identity": 675,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 856,
+        "word": "빅맥"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 619,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1655,
+        "word": "햄버거"
+      }
+    },
+    "relation": {
+      "identity": 24761,
+      "start": 546,
+      "end": 619,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 354
+      }
+    },
+    "to": {
+      "identity": 546,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 706,
+        "word": "치즈"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 619,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1655,
+        "word": "햄버거"
+      }
+    },
+    "relation": {
+      "identity": 26547,
+      "start": 569,
+      "end": 619,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 339
+      }
+    },
+    "to": {
+      "identity": 569,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 985,
+        "word": "정도"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 619,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1655,
+        "word": "햄버거"
+      }
+    },
+    "relation": {
+      "identity": 46933,
+      "start": 789,
+      "end": 619,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 339
+      }
+    },
+    "to": {
+      "identity": 789,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 824,
+        "word": "느낌"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 619,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1655,
+        "word": "햄버거"
+      }
+    },
+    "relation": {
+      "identity": 36732,
+      "start": 933,
+      "end": 619,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 332
+      }
+    },
+    "to": {
+      "identity": 933,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 952,
+        "word": "이번"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 619,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1655,
+        "word": "햄버거"
+      }
+    },
+    "relation": {
+      "identity": 28469,
+      "start": 619,
+      "end": 626,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 297
+      }
+    },
+    "to": {
+      "identity": 626,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 815,
+        "word": "치킨"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 619,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1655,
+        "word": "햄버거"
+      }
+    },
+    "relation": {
+      "identity": 83354,
+      "start": 619,
+      "end": 333,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 291
+      }
+    },
+    "to": {
+      "identity": 333,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1008,
+        "word": "사진"
+      }
+    }
+  }
+]

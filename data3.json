@@ -1,0 +1,272 @@
+[
+  {
+    "from": {
+      "identity": 616,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1417,
+        "word": "메뉴"
+      }
+    },
+    "relation": {
+      "identity": 36559,
+      "start": 795,
+      "end": 616,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 461
+      }
+    },
+    "to": {
+      "identity": 795,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1042,
+        "word": "매장"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 616,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1417,
+        "word": "메뉴"
+      }
+    },
+    "relation": {
+      "identity": 27865,
+      "start": 593,
+      "end": 616,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 432
+      }
+    },
+    "to": {
+      "identity": 593,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 784,
+        "word": "소스"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 616,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1417,
+        "word": "메뉴"
+      }
+    },
+    "relation": {
+      "identity": 46902,
+      "start": 789,
+      "end": 616,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 391
+      }
+    },
+    "to": {
+      "identity": 789,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 830,
+        "word": "느낌"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 616,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1417,
+        "word": "메뉴"
+      }
+    },
+    "relation": {
+      "identity": 24758,
+      "start": 546,
+      "end": 616,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 370
+      }
+    },
+    "to": {
+      "identity": 546,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 714,
+        "word": "치즈"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 616,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1417,
+        "word": "메뉴"
+      }
+    },
+    "relation": {
+      "identity": 36774,
+      "start": 933,
+      "end": 616,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 367
+      }
+    },
+    "to": {
+      "identity": 933,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 966,
+        "word": "이번"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 616,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1417,
+        "word": "메뉴"
+      }
+    },
+    "relation": {
+      "identity": 27169,
+      "start": 579,
+      "end": 616,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 361
+      }
+    },
+    "to": {
+      "identity": 579,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 623,
+        "word": "패티"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 616,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1417,
+        "word": "메뉴"
+      }
+    },
+    "relation": {
+      "identity": 38010,
+      "start": 503,
+      "end": 616,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 360
+      }
+    },
+    "to": {
+      "identity": 503,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1065,
+        "word": "가능"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 616,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1417,
+        "word": "메뉴"
+      }
+    },
+    "relation": {
+      "identity": 26544,
+      "start": 569,
+      "end": 616,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 358
+      }
+    },
+    "to": {
+      "identity": 569,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 991,
+        "word": "정도"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 616,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1417,
+        "word": "메뉴"
+      }
+    },
+    "relation": {
+      "identity": 33442,
+      "start": 835,
+      "end": 616,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 353
+      }
+    },
+    "to": {
+      "identity": 835,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 828,
+        "word": "확인"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 616,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1417,
+        "word": "메뉴"
+      }
+    },
+    "relation": {
+      "identity": 47398,
+      "start": 616,
+      "end": 408,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 345
+      }
+    },
+    "to": {
+      "identity": 408,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 739,
+        "word": "판매"
+      }
+    }
+  }
+]

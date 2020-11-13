@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script
+      type="text/javascript"
+      src="//cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.map"
+    ></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/ramda@latest/dist/ramda.min.js"
+    ></script>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        font: Arial 12px;
+        text-align: center;
+      }
+
+      .link {
+        stroke: #ccc;
+      }
+
+      .node text {
+        pointer-events: none;
+        font: sans-serif;
+      }
+    </style>
+    <script type="text/javascript" src="lib.js"></script>
+    <script type="text/javascript" src="api.js"></script>
+    <script type="text/javascript" src="d3lib.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript" src="runner.js"></script>
+    <script type="text/javascript">
+      // querying A -> target = A , excludes = [] =>  result [A,B,C,D]
+      // querying B -> target = B , excludes = [A,C,D] => result [B,E,F,G]
+    </script>
+  </body>
+</html>

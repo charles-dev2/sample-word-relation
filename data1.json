@@ -1,0 +1,272 @@
+[
+  {
+    "from": {
+      "identity": 295,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 11362,
+        "word": "맥도날드"
+      }
+    },
+    "relation": {
+      "identity": 25376,
+      "start": 554,
+      "end": 295,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 1575
+      }
+    },
+    "to": {
+      "identity": 554,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1636,
+        "word": "버거"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 295,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 11362,
+        "word": "맥도날드"
+      }
+    },
+    "relation": {
+      "identity": 27067,
+      "start": 295,
+      "end": 619,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 1573
+      }
+    },
+    "to": {
+      "identity": 619,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1665,
+        "word": "햄버거"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 295,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 11362,
+        "word": "맥도날드"
+      }
+    },
+    "relation": {
+      "identity": 27065,
+      "start": 295,
+      "end": 617,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 1385
+      }
+    },
+    "to": {
+      "identity": 617,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1469,
+        "word": "생각"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 295,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 11362,
+        "word": "맥도날드"
+      }
+    },
+    "relation": {
+      "identity": 27064,
+      "start": 295,
+      "end": 616,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 1371
+      }
+    },
+    "to": {
+      "identity": 616,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1406,
+        "word": "메뉴"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 295,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 11362,
+        "word": "맥도날드"
+      }
+    },
+    "relation": {
+      "identity": 24286,
+      "start": 530,
+      "end": 295,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 1358
+      }
+    },
+    "to": {
+      "identity": 530,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1398,
+        "word": "주문"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 295,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 11362,
+        "word": "맥도날드"
+      }
+    },
+    "relation": {
+      "identity": 25454,
+      "start": 555,
+      "end": 295,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 1203
+      }
+    },
+    "to": {
+      "identity": 555,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1242,
+        "word": "세트"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 295,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 11362,
+        "word": "맥도날드"
+      }
+    },
+    "relation": {
+      "identity": 29793,
+      "start": 711,
+      "end": 295,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 1193
+      }
+    },
+    "to": {
+      "identity": 711,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1319,
+        "word": "오늘"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 295,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 11362,
+        "word": "맥도날드"
+      }
+    },
+    "relation": {
+      "identity": 27062,
+      "start": 295,
+      "end": 614,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 1135
+      }
+    },
+    "to": {
+      "identity": 614,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1202,
+        "word": "사람"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 295,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 11362,
+        "word": "맥도날드"
+      }
+    },
+    "relation": {
+      "identity": 29644,
+      "start": 706,
+      "end": 295,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 1119
+      }
+    },
+    "to": {
+      "identity": 706,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1201,
+        "word": "시간"
+      }
+    }
+  },
+  {
+    "from": {
+      "identity": 295,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 11362,
+        "word": "맥도날드"
+      }
+    },
+    "relation": {
+      "identity": 29340,
+      "start": 697,
+      "end": 295,
+      "type": "SAME_POST",
+      "properties": {
+        "count": 1075
+      }
+    },
+    "to": {
+      "identity": 697,
+      "labels": ["UniqueKeyword"],
+      "properties": {
+        "count": 1122,
+        "word": "가격"
+      }
+    }
+  }
+]

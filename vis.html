@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script
+      type="text/javascript"
+      src="//cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.map"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"
+      integrity="sha512-XHDcSyqhOoO2ocB7sKOCJEkUjw/pQCJViP1ynpy+EGh/LggzrP6U/V3a++LQTnZT7sCQKeHRyWHfhN2afjXjCg=="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css"
+      integrity="sha512-8OVtKyemDe8Koi/74dnSJughhkwnzqq217zUtUumyvx0Z0kF6H0YYFobH2kEYjKMNq2xNQyN64dnleqecTSL0A=="
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-graph3d.min.js"
+      integrity="sha512-V0LxmD/JlQG+fD4Tmm+r9tVf5yZXCG+y5xfvOUqGa/ExHqbFF18afgXZ4k5Q5xeXzF5q+guUCUJeCIaEG94s0A=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.js"
+      integrity="sha512-GE9mKnPrTn2DY5AZuIC9yE6K4FF8T+9lsO7jwHn+RW9rEjnHzF/in0oGwlPzRwjhQ+oJiawmtfvleX+l6h5/cA=="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.css"
+      integrity="sha512-NJXM8vzWgDcBy9SCUTJXYnNO43sZV3pfLWWZMFTuCtEUIOcznk+AMpH6N3XruxavYfMeMmjrzDMEQ6psRh/6Hw=="
+      crossorigin="anonymous"
+    />
+    <style type="text/css">
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // querying A -> target = A , excludes = [] =>  result [A,B,C,D]
+      // querying B -> target = B , excludes = [A,C,D] => result [B,E,F,G]
+
+      const createDataSet = (dataset) => ({
+        ...dataset,
+      });
+
+      const createNode = ({ id, label, value, color = { opacity: 1 } }) => ({
+        id,
+        label,
+        value,
+        color,
+      });
+
+      const createNodeFromNeo4jNode = ({ identity: id, properties }) =>
+        createNode({
+          id,
+          label: properties.word,
+          value: properties.count,
+          color: { opacity: 1 },
+        });
+
+      const createLink = ({ from, to, id, count }) => ({
+        id,
+        from,
+        to,
+        count,
+      });
+
+      const createLinkFromNeo4jRelation = ({
+        identity: id,
+        start: from,
+        end: to,
+        properties,
+      }) =>
+        createLink({
+          id,
+          from,
+          to,
+          count: properties.count,
+        });
+
+      const convertNeo4jDataToVisDataSet = (d) =>
+        d.reduce((accum, current, idx, arr) => {
+          let next = createDataSet(accum);
+
+          const { from, to, relation } = current;
+
+          var dstNode = createNodeFromNeo4jNode(from);
+          if (next.nodes.every(({ id }) => id !== dstNode.id)) {
+            next = createDataSet({
+              ...next,
+              nodes: [...next.nodes, createNode(dstNode)],
+            });
+          }
+
+          var srcNode = createNodeFromNeo4jNode(to);
+          if (next.nodes.every(({ id }) => id !== srcNode.id)) {
+            next = createDataSet({
+              ...next,
+              nodes: [...next.nodes, createNode({ ...srcNode })],
+            });
+          }
+
+          var edge = createLinkFromNeo4jRelation(relation);
+          if (next.edges.every(({ id }) => id !== edge.id)) {
+            next = createDataSet({
+              ...next,
+              edges: [...next.edges, createLink(edge)],
+            });
+          }
+
+          return next;
+        }, createDataSet({ nodes: [], edges: [] }));
+
+      const getElementById = (id) =>
+        document.getElementById(id) || document.createElement("div");
+
+      var reqMap = [
+        { word: "맥도날드", url: "/data1.json" },
+        { word: "햄버거", url: "/data2.json" },
+        { word: "메뉴", url: "/data3.json" },
+      ];
+      var cache = [];
+
+      var queryingWord = async (word) => {
+        const response = await fetch(
+          reqMap.find(({ word: w }) => w === word).url
+        );
+        const json = await response.json();
+
+        var c = []
+          .concat(cache)
+          .concat(json)
+          .reduce((accum, current, idx, arr) => {
+            var foundIndex = accum.findIndex(
+              ({ from, to, relation }) =>
+                from.identity === current.from.identity &&
+                to.identity === current.to.identity
+            );
+            if (foundIndex >= 0) {
+              var next = [...accum];
+              return next
+                .splice(0, foundIndex)
+                .concat([current])
+                .concat(next.splice(1));
+            }
+            return [...accum, current];
+          }, []);
+        cache = c;
+
+        var p0set = c.filter(({ from }) => from.properties.word === word);
+        var p1set = c.filter(({ from }) =>
+          p0set
+            .map(({ to }) => to.properties.word)
+            .includes(from.properties.word)
+        );
+
+        var p2set = c.filter(({ to }) => to.properties.word === word);
+        var p3set = c.filter(({ from }) =>
+          p2set
+            .map(({ from }) => from.properties.word)
+            .includes(from.properties.word)
+        );
+
+        return [].concat(p0set).concat(p1set).concat(p2set).concat(p3set);
+      };
+
+      // create a network
+
+      var runWithWord = (w) => {
+        queryingWord(w).then((visData) => {
+          var dataset = convertNeo4jDataToVisDataSet(visData);
+
+          dataset = {
+            ...dataset,
+            nodes: dataset.nodes.map((currentNode) => {
+              const { id, label } = currentNode;
+              const baseNode = dataset.nodes.find((node) => node.label === w);
+              if (baseNode.id === currentNode.id) {
+                return createNode({ ...currentNode, group: "highlight" });
+              }
+              const children1st = dataset.edges.filter(
+                (edge) => edge.from === baseNode.id
+              );
+              if (children1st.some((edge) => edge.to === currentNode.id)) {
+                return createNode({ ...currentNode, group: "highlight" });
+              }
+              return createNode({ ...currentNode, group: "none" });
+            }),
+          };
+
+          console.log(JSON.stringify(dataset.nodes, null, 2));
+
+          // console.log(JSON.stringify(dataset, null, 2));
+
+          var container = getElementById("vis-canvas");
+
+          var data = {
+            nodes: new vis.DataSet(),
+            edges: new vis.DataSet(),
+          };
+
+          data.nodes.clear();
+          data.nodes.add(dataset.nodes);
+
+          data.edges.clear();
+          data.edges.add(dataset.edges);
+
+          var options = {
+            groups: {
+              highlight: {
+                color: {
+                  opacity: 1,
+                },
+              },
+              none: {
+                color: {
+                  opacity: 0.2,
+                },
+              },
+            },
+            nodes: {
+              shape: "circle",
+            },
+            layout: {
+              randomSeed: 0,
+              improvedLayout: true,
+            },
+          };
+
+          var network = new vis.Network(container, data, options);
+
+          network.on("selectNode", ({ nodes, event }) => {
+            event.stopPropagation();
+            const found = dataset.nodes.find(({ id }) => id === nodes[0]);
+            if (found) {
+              network.destroy();
+              runWithWord(found.label);
+            }
+          });
+
+          network.on("afterDrawing", (ctx) => {
+            const baseNode = dataset.nodes.find((node) => node.label === w);
+            if (baseNode) {
+              const node = data.nodes.get(baseNode.id);
+              network.moveTo(node);
+            }
+          });
+
+          // init vis
+        });
+      };
+
+      runWithWord("맥도날드");
+    </script>
+    <div
+      id="vis-canvas"
+      style="
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: 40rem;
+      "
+    ></div>
+  </body>
+</html>
